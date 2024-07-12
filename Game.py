@@ -11,11 +11,11 @@ class Globals:
 
     def __init__(self):
         self.keys = {
-            "left": [97, 104, 260],
-            "down": [115, 106, 258],
-            "up": [119, 107, 259],
-            "right": [100, 108, 261],
-            "return": [32, 111, 10]
+            "left":     [97, 104, 260],
+            "down":     [115, 106, 258],
+            "up":       [119, 107, 259],
+            "right":    [100, 108, 261],
+            "return":   [32, 111, 10]
         }
         self.opposite = {
             "right": "left",
@@ -150,7 +150,6 @@ class Play(Globals):
             self.pause = not self.pause
 
     def __move_snake_head(self, screen):
-        global new_head
         head = self.snake_body[0]
         if self.current_direction == "right":
             new_head = [head[0], head[1] + 1]
@@ -176,9 +175,9 @@ class Play(Globals):
     def __check_loss_conditions(self):
         head = self.snake_body[0]
         if (
-                head[0] <= 2 or head[0] >= self.__y_len - 3
-                or head[1] <= 5 or head[1] >= self.__x_len - 6
-                or head in self.snake_body[1:]
+            head[0] <= 2 or head[0] >= self.__y_len - 3
+            or head[1] <= 5 or head[1] >= self.__x_len - 6
+            or head in self.snake_body[1:]
         ):
             return True
         return False

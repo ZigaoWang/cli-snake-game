@@ -7,16 +7,16 @@ def main():
     play = Game.Play("█", "░")
 
     while True:
-        menu.start()
+        menu.start
 
         if menu.selected_item == 0:
             try:
-                play.start()
+                play.start
             except:
                 pass
             score_board.add_score(play.score[:])
         elif menu.selected_item == 1:
-            score_board.start()
+            score_board.start
         else:
             break
 
